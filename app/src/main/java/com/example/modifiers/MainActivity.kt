@@ -109,6 +109,7 @@ fun IconLinks() {
     val gmailUrl = "mailto:mohammadsalman1999.9.5@gmail.com"
     val linkedinUrl = "https://www.linkedin.com/in/mohammad-salman10"
     val youtubeUrl = "https://www.youtube.com/@Salman_the_listener"
+    val gethubUrl = "https://github.com/Mohammadsalman19"
 
     Row(
         modifier = Modifier
@@ -183,6 +184,29 @@ fun IconLinks() {
                 text = "YouTube",
                 fontSize = 15.sp,
                 color = Color(0xFFFF0000),
+                fontWeight = FontWeight.Bold,
+                textDecoration = TextDecoration.Underline
+            )
+        }
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.clickable {
+                val ghIntent = Intent(Intent.ACTION_VIEW, Uri.parse(gethubUrl))
+                context.startActivity(ghIntent)
+            }
+        ){
+            Image(
+                painter = painterResource(R.drawable.gh),
+                contentDescription = "GitHub Icon",
+                modifier = Modifier
+                    .size(30.dp)
+                    .padding(end = 8.dp)
+
+            )
+            Text(
+                text = "GitHub",
+                fontSize = 15.sp,
+                color = Color(0xFF000000),
                 fontWeight = FontWeight.Bold,
                 textDecoration = TextDecoration.Underline
             )
